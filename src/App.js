@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import { FileText, Download, HelpCircle, CheckCircle } from 'lucide-react';
+import { FileText, Download, HelpCircle, CheckCircle, Lock } from 'lucide-react';
 
 const CareerStatementGenerator = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [showError, setShowError] = useState(false);
+  
+  const SECRET_PASSWORD = 'careerengineer!';
+
   const [formData, setFormData] = useState({
     personalInfo: { name: '', birth: '', phone: '', email: '', address: '' },
     position: '',
@@ -20,6 +26,57 @@ const CareerStatementGenerator = () => {
     publications: [{ title: '', journal: '', date: '', author: '' }],
     projects: [{ company: '', name: '', period: '', role: '', situation: '', task: '', action: '', result: '', insight: '' }]
   });
+
+  const handleLogin = () => {
+    if (password === SECRET_PASSWORD) {
+      setIsAuthenticated(true);
+      setShowError(false);
+    } else {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 3000);
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center p-8">
+        <div className="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4">
+              <Lock className="w-8 h-8 text-indigo-600" />
+            </div>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">비공개 페이지</h1>
+            <p className="text-gray-600">CareerEngineer의 경력기술서 작성 가이드&템플릿</p>
+          </div>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">비밀번호를 입력하세요</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all"
+                placeholder="비밀번호 입력"
+                autoFocus
+              />
+            </div>
+            {showError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-center">
+                비밀번호가 올바르지 않습니다.
+              </div>
+            )}
+            <button
+              onClick={handleLogin}
+              className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold"
+            >
+              접속하기
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const addEducation = () => {
     setFormData({

@@ -261,20 +261,145 @@ const CareerStatementGenerator = () => {
             작성 핵심 원칙 - JD 기반 작성법
           </h2>
           <div className="space-y-4 text-sm text-gray-700">
-            <div className="p-4 bg-white rounded-lg">
-              <p className="font-semibold mb-2">1단계: JD 분석</p>
-              <p>• 지원 직무의 JD에서 핵심 키워드(기술, 역량, 경험)를 추출하세요</p>
-              <p>• "필수 요건"과 "우대 사항"을 구분하여 정리하세요</p>
+            <div className="p-4 bg-white rounded-lg border-l-4 border-indigo-500">
+              <p className="font-semibold mb-2 text-indigo-800">💡 왜 JD 기반으로 작성해야 하나요?</p>
+              <p className="mb-2">• 채용담당자는 JD의 요구사항과 지원자의 경험을 매칭하며 서류를 평가합니다</p>
+              <p className="mb-2">• JD에 명시된 키워드가 경력기술서에 있으면 "적합한 인재"로 판단될 가능성이 높아집니다</p>
+              <p>• ATS(지원자 추적 시스템)는 키워드 매칭으로 1차 필터링하므로 JD 키워드 반영이 필수입니다</p>
             </div>
+
             <div className="p-4 bg-white rounded-lg">
-              <p className="font-semibold mb-2">2단계: 매칭 포인트 찾기</p>
-              <p>• 자신의 경험 중 JD 키워드와 연결되는 부분을 찾으세요</p>
-              <p>• 직접적 경험이 없다면 유사 경험이나 전이 가능한 역량을 찾으세요</p>
+              <p className="font-semibold mb-2">1단계: JD 분석 및 키워드 추출</p>
+              <div className="ml-4 space-y-2">
+                <p><strong>① 필수 요건과 우대 사항 구분</strong></p>
+                <p className="ml-4">• 필수 요건: 반드시 경력기술서에 포함되어야 할 핵심 키워드</p>
+                <p className="ml-4">• 우대 사항: 있으면 가산점이 되는 추가 키워드</p>
+                
+                <p className="mt-3"><strong>② 키워드 카테고리별 분류</strong></p>
+                <p className="ml-4">• 기술 스택: React, Python, AWS, SQL 등</p>
+                <p className="ml-4">• 업무 역량: 프로젝트 관리, 데이터 분석, API 설계 등</p>
+                <p className="ml-4">• 소프트 스킬: 커뮤니케이션, 문제 해결, 리더십 등</p>
+                <p className="ml-4">• 경험 키워드: 대용량 트래픽, 애자일, MSA, CI/CD 등</p>
+                
+                <p className="mt-3"><strong>③ JD 예시 분석</strong></p>
+                <div className="ml-4 p-3 bg-gray-50 rounded mt-2">
+                  <p className="font-semibold mb-1">예시 JD (백엔드 개발자)</p>
+                  <p className="text-xs">"Node.js 기반 RESTful API 설계 및 개발 경험 3년 이상 (필수)"</p>
+                  <p className="text-xs">"MySQL, Redis 등 데이터베이스 설계 및 최적화 경험 (필수)"</p>
+                  <p className="text-xs">"AWS 클라우드 환경에서의 서비스 운영 경험 (우대)"</p>
+                  <p className="text-xs mt-2 text-indigo-600">→ 추출 키워드: Node.js, RESTful API, MySQL, Redis, 데이터베이스 최적화, AWS</p>
+                </div>
+              </div>
             </div>
+
             <div className="p-4 bg-white rounded-lg">
-              <p className="font-semibold mb-2">3단계: 키워드 반영</p>
-              <p>• 1줄 포지셔닝, 핵심역량, 프로젝트 설명에 JD의 핵심 키워드를 자연스럽게 포함하세요</p>
-              <p>• 단순 나열이 아닌 실제 경험과 성과 중심으로 작성하세요</p>
+              <p className="font-semibold mb-2">2단계: 자신의 경험과 매칭 포인트 찾기</p>
+              <div className="ml-4 space-y-2">
+                <p><strong>① 직접 매칭: JD 키워드와 정확히 일치하는 경험</strong></p>
+                <div className="ml-4 p-3 bg-green-50 rounded mt-2">
+                  <p className="text-xs">JD: "Node.js 기반 API 개발 경험"</p>
+                  <p className="text-xs text-green-700">→ 매칭: "Node.js와 Express로 RESTful API 20개 설계 및 개발"</p>
+                </div>
+                
+                <p className="mt-3"><strong>② 유사 매칭: 비슷한 기술이나 경험으로 연결</strong></p>
+                <div className="ml-4 p-3 bg-yellow-50 rounded mt-2">
+                  <p className="text-xs">JD: "대용량 트래픽 처리 경험"</p>
+                  <p className="text-xs text-yellow-700">→ 매칭: "일 100만 사용자 규모의 서비스에서 성능 최적화 수행"</p>
+                </div>
+                
+                <p className="mt-3"><strong>③ 전이 가능 역량: 다른 분야 경험을 해당 직무로 연결</strong></p>
+                <div className="ml-4 p-3 bg-blue-50 rounded mt-2">
+                  <p className="text-xs">JD: "프로젝트 관리 경험"</p>
+                  <p className="text-xs text-blue-700">→ 매칭: "4명 팀 리드로 6개월 프로젝트를 기한 내 성공적으로 완수"</p>
+                </div>
+
+                <p className="mt-3"><strong>④ 매칭표 만들기 (추천)</strong></p>
+                <div className="ml-4 p-3 bg-gray-50 rounded mt-2">
+                  <p className="text-xs font-semibold mb-1">매칭표 예시:</p>
+                  <table className="text-xs w-full border">
+                    <thead className="bg-gray-100">
+                      <tr>
+                        <th className="border p-1">JD 요구사항</th>
+                        <th className="border p-1">나의 경험</th>
+                        <th className="border p-1">작성 위치</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border p-1">Node.js API 개발</td>
+                        <td className="border p-1">3년, API 50개 개발</td>
+                        <td className="border p-1">1줄 포지셔닝, 프로젝트 1</td>
+                      </tr>
+                      <tr>
+                        <td className="border p-1">DB 최적화</td>
+                        <td className="border p-1">쿼리 최적화로 응답속도 80% 개선</td>
+                        <td className="border p-1">대표 성과, 프로젝트 1</td>
+                      </tr>
+                      <tr>
+                        <td className="border p-1">AWS 경험</td>
+                        <td className="border p-1">EC2, RDS, S3 활용 서비스 구축</td>
+                        <td className="border p-1">기술 스택, 프로젝트 2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-white rounded-lg">
+              <p className="font-semibold mb-2">3단계: 키워드를 경력기술서에 자연스럽게 녹이기</p>
+              <div className="ml-4 space-y-2">
+                <p><strong>① 1줄 포지셔닝에 핵심 키워드 3-5개 포함</strong></p>
+                <div className="ml-4 p-3 bg-green-50 rounded mt-2">
+                  <p className="text-xs font-semibold text-green-800">✅ 좋은 예시</p>
+                  <p className="text-xs">"5년차 백엔드 개발자로 <span className="font-bold text-green-700">Node.js와 MySQL</span>을 활용한 <span className="font-bold text-green-700">RESTful API 설계</span> 및 <span className="font-bold text-green-700">대용량 트래픽 처리</span> 전문"</p>
+                  <p className="text-xs text-green-600 mt-1">→ JD의 핵심 키워드 4개가 자연스럽게 포함됨</p>
+                </div>
+                <div className="ml-4 p-3 bg-red-50 rounded mt-2">
+                  <p className="text-xs font-semibold text-red-800">❌ 나쁜 예시</p>
+                  <p className="text-xs">"열정적이고 성실한 개발자입니다"</p>
+                  <p className="text-xs text-red-600 mt-1">→ 구체적 기술이나 경험 키워드 없음</p>
+                </div>
+
+                <p className="mt-3"><strong>② 대표 성과에 JD 핵심 키워드 + 수치 결합</strong></p>
+                <div className="ml-4 p-3 bg-green-50 rounded mt-2">
+                  <p className="text-xs font-semibold text-green-800">✅ 좋은 예시</p>
+                  <p className="text-xs">"<span className="font-bold text-green-700">Redis 캐싱</span>과 <span className="font-bold text-green-700">DB 쿼리 최적화</span>로 <span className="font-bold text-green-700">API 응답시간 80% 단축</span> 및 연간 6억원 손실 방지"</p>
+                  <p className="text-xs text-green-600 mt-1">→ JD 키워드(Redis, DB 최적화) + 구체적 성과(80%, 6억원)</p>
+                </div>
+
+                <p className="mt-3"><strong>③ 프로젝트 설명에서 키워드 반복 강화</strong></p>
+                <div className="ml-4 p-3 bg-blue-50 rounded mt-2">
+                  <p className="text-xs mb-1"><span className="font-semibold">상황:</span> "월 거래액 100억 규모 플랫폼에서 <span className="font-bold text-blue-700">MySQL DB 병목</span>으로 <span className="font-bold text-blue-700">응답시간 지연</span> 발생"</p>
+                  <p className="text-xs mb-1"><span className="font-semibold">수행:</span> "<span className="font-bold text-blue-700">Redis 캐싱 시스템 설계</span>, <span className="font-bold text-blue-700">인덱스 최적화</span> 10개 수행, <span className="font-bold text-blue-700">쿼리 튜닝</span>"</p>
+                  <p className="text-xs"><span className="font-semibold">성과:</span> "<span className="font-bold text-blue-700">DB 부하 70% 감소</span>, <span className="font-bold text-blue-700">응답시간 30초→6초</span> 개선"</p>
+                  <p className="text-xs text-blue-600 mt-1">→ MySQL, Redis, 성능 최적화 등 키워드가 프로젝트 전체에 자연스럽게 반복</p>
+                </div>
+
+                <p className="mt-3"><strong>④ 키워드 배치 전략</strong></p>
+                <div className="ml-4 mt-2">
+                  <p className="text-xs">• <span className="font-semibold">필수 키워드</span>: 1줄 포지셔닝, 대표 성과, 주요 기술과 도구에 반드시 포함</p>
+                  <p className="text-xs">• <span className="font-semibold">우대 키워드</span>: 프로젝트 설명, 핵심역량에 자연스럽게 녹이기</p>
+                  <p className="text-xs">• <span className="font-semibold">반복 전략</span>: 같은 키워드를 2-3곳에서 다른 맥락으로 반복해 강조</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border-l-4 border-amber-500">
+              <p className="font-semibold mb-2 text-amber-900">⚠️ 주의사항</p>
+              <p className="text-xs mb-1">• 키워드를 단순 나열하지 말고 실제 경험과 성과 속에 자연스럽게 녹이세요</p>
+              <p className="text-xs mb-1">• 허위 키워드 사용 금지: 경험하지 않은 기술을 적으면 면접에서 탈락합니다</p>
+              <p className="text-xs mb-1">• 키워드 과다 사용(Keyword Stuffing) 지양: 부자연스러운 반복은 역효과</p>
+              <p className="text-xs">• JD를 100% 맞추려 하지 말고, 70-80% 매칭을 목표로 하세요</p>
+            </div>
+
+            <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border-l-4 border-purple-500">
+              <p className="font-semibold mb-2 text-purple-900">✨ 작성 순서 추천</p>
+              <p className="text-xs mb-1">1. 지원하려는 회사의 JD를 출력하거나 별도 문서에 복사</p>
+              <p className="text-xs mb-1">2. JD에서 키워드 추출 및 필수/우대 구분 (형광펜 표시 추천)</p>
+              <p className="text-xs mb-1">3. 매칭표 작성: JD 요구사항 vs 나의 경험</p>
+              <p className="text-xs mb-1">4. 매칭표를 보며 경력기술서 작성 (키워드를 자연스럽게 녹이기)</p>
+              <p className="text-xs">5. 최종 검토: JD와 경력기술서를 나란히 놓고 키워드 매칭 확인</p>
             </div>
           </div>
         </div>

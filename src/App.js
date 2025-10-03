@@ -341,8 +341,6 @@ function CareerStatementGenerator() {
               <p className="text-xs text-gray-500">오직 개인적인 용도로만 사용해야 하며, 상업적 목적의 사용 및 무단 배포를 엄격히 금지합니다.</p>
             </div>
 
-
-
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
             <p className="text-sm font-semibold text-gray-800 mb-2">작성 핵심 원칙</p>
             <ul className="text-sm text-gray-700 space-y-1">

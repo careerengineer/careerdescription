@@ -556,7 +556,7 @@ function CareerStatementGenerator() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">회사명</label>
-                  <input type="text" value={career.company} onChange={(e) => updateCareer(index, 'company', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 전자상거래 플랫폼 (보안상 일반 용어 사용)" />
+                  <input type="text" value={career.company} onChange={(e) => updateCareer(index, 'company', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: ABC솔루션" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">부서</label>
@@ -765,8 +765,8 @@ function CareerStatementGenerator() {
             <div className="mt-6 pt-6 border-t border-gray-200 text-center">
               <p className="text-xs font-bold text-gray-700 mb-2">© 2025 CareerEngineer. All Rights Reserved.</p>
               <p className="text-xs text-gray-500 mb-1">이 문서는 저작권법에 의해 보호받는 저작물입니다.</p>
-              <p className="text-xs text-gray-500 mb-1">문서의 전체 또는 일부를 저작권자의 사전 서면 동의 없이 무단으로 복제, 배포, 전송, 전시, 방송하거나</p>
-              <p className="text-xs text-gray-500 mb-1">수정 및 편집하는 행위는 금지되어 있으며, 위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p>
+              <p className="text-xs text-red-500 mb-1">문서의 전체 또는 일부를 저작권자의 사전 서면 동의 없이 무단으로 복제, 배포, 전송, 전시, 방송하거나</p>
+              <p className="text-xs text-red-500 mb-1">수정 및 편집하는 행위는 금지되어 있으며, 위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p>
               <p className="text-xs text-gray-500">오직 개인적인 용도로만 사용해야 하며, 상업적 목적의 사용 및 무단 배포를 엄격히 금지합니다.</p>
             </div>
           </div>

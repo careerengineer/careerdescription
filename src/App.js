@@ -467,7 +467,7 @@ function CareerStatementGenerator() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">학교명</label>
-                  <input type="text" value={edu.school} onChange={(e) => updateEducation(index, 'school', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 서울대학교" />
+                  <input type="text" value={edu.school} onChange={(e) => updateEducation(index, 'school', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: OO대학교" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">전공</label>
@@ -475,7 +475,7 @@ function CareerStatementGenerator() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">학위</label>
-                  <input type="text" value={edu.degree} onChange={(e) => updateEducation(index, 'degree', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 학사, 석사" />
+                  <input type="text" value={edu.degree} onChange={(e) => updateEducation(index, 'degree', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 학사, 석사, 박사" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">재학 기간</label>

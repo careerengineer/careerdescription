@@ -479,7 +479,7 @@ function CareerStatementGenerator() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">재학 기간</label>
-                  <input type="text" value={edu.period} onChange={(e) => updateEducation(index, 'period', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 2010.03 - 2014.02" />
+                  <input type="text" value={edu.period} onChange={(e) => updateEducation(index, 'period', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 2020.03 - 2024.02" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">졸업 상태</label>

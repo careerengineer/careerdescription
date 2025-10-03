@@ -330,7 +330,7 @@ function CareerStatementGenerator() {
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-6">
           <div className="flex items-center gap-3 mb-4">
             <FileText className="w-8 h-8 text-indigo-600" />
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-800">CareerEngineer의 경력기술서 작성 가이드&템플릿</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-800 text-center">CareerEngineer의 경력기술서 작성 가이드&템플릿</h1>
           </div>
 
            <div className="mt-6 pt-6 border-t border-gray-200 text-center">

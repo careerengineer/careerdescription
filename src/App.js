@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Download, FileText, User, Award, ChevronRight, HelpCircle } from 'lucide-react';
 
-function App() {
+function CareerStatementGenerator() {
   const [formData, setFormData] = useState({
     personalInfo: {
       name: '',
@@ -709,4 +709,4 @@ function App() {
   );
 }
 
-export default App;
+export default CareerStatementGenerator;

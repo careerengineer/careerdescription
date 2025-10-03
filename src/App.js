@@ -404,7 +404,7 @@ function CareerStatementGenerator() {
             </div>
             <div className="flex items-start gap-2">
               <span className="text-blue-600">•</span>
-              <p><strong>보안 준수:</strong> 프로젝트 작성 시 회사명, 민감 정보 대신 해당 분야의 일반적인 용어로 작성하세요.<br/>
+              <p><strong>보안 준수:</strong> 프로젝트 작성 시 보안유지가 필요한 회사명, 민감 정보에 대해서는 해당 분야의 일반적인 용어로 작성하세요.<br/>
               예: "전자상거래 플랫폼", "금융 서비스 기업", "글로벌 IT 기업" 등</p>
             </div>
             <div className="flex items-start gap-2">
@@ -716,7 +716,7 @@ function CareerStatementGenerator() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">회사/조직</label>
-                    <input type="text" value={project.company} onChange={(e) => updateProject(index, 'company', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 전자상거래 플랫폼" />
+                    <input type="text" value={project.company} onChange={(e) => updateProject(index, 'company', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: ABC 솔루션" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">프로젝트명</label>

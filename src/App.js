@@ -6,7 +6,7 @@ function CareerStatementGenerator() {
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
   
-  const SECRET_PASSWORD = 'career2024';
+  const SECRET_PASSWORD = 'CareerEngineer!';
 
   const handleLogin = () => {
     if (password === SECRET_PASSWORD) {

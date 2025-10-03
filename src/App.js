@@ -343,11 +343,6 @@ function CareerStatementGenerator() {
 </p>
             </div>
 
-
-        </div>
-
-        {/* JD 분석 가이드 */}
-
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
             <p className="text-sm font-semibold text-gray-800 mb-2">작성 핵심 원칙</p>
             <ul className="text-sm text-gray-700 space-y-1">
@@ -358,10 +353,9 @@ function CareerStatementGenerator() {
               <li>• <strong>간결하게:</strong> 1-2페이지, 핵심만 전달하세요</li>
             </ul>
           </div>
+        </div>
 
-</p>
-</p>
-
+        {/* JD 분석 가이드 */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-lg p-6 md:p-8 mb-6">
           <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <HelpCircle className="w-6 h-6 text-indigo-600" />

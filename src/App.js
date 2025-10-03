@@ -332,6 +332,17 @@ function CareerStatementGenerator() {
             <FileText className="w-8 h-8 text-indigo-600" />
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800">CareerEngineer의 경력기술서 작성 가이드&템플릿</h1>
           </div>
+
+           <div className="mt-6 pt-6 border-t border-gray-200 text-center">
+              <p className="text-xs font-bold text-gray-700 mb-2">© 2025 CareerEngineer. All Rights Reserved.</p>
+              <p className="text-xs text-gray-500 mb-1">이 문서는 저작권법에 의해 보호받는 저작물입니다.</p>
+              <p className="text-xs text-red-500 mb-1">문서의 전체 또는 일부를 저작권자의 사전 서면 동의 없이 무단으로 복제, 배포, 전송, 전시, 방송하거나</p>
+              <p className="text-xs text-red-500 mb-1">수정 및 편집하는 행위는 금지되어 있으며, 위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p>
+              <p className="text-xs text-gray-500">오직 개인적인 용도로만 사용해야 하며, 상업적 목적의 사용 및 무단 배포를 엄격히 금지합니다.</p>
+            </div>
+
+
+
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
             <p className="text-sm font-semibold text-gray-800 mb-2">작성 핵심 원칙</p>
             <ul className="text-sm text-gray-700 space-y-1">

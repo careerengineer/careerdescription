@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
-import { Download, FileText, User, Award, ChevronRight, HelpCircle } from 'lucide-react';
+import { Download, FileText, User, Award, ChevronRight, HelpCircle, Lock } from 'lucide-react';
 
 function CareerStatementGenerator() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [showError, setShowError] = useState(false);
+  
+  const SECRET_PASSWORD = 'career2024';
+
+  const handleLogin = () => {
+    if (password === SECRET_PASSWORD) {
+      setIsAuthenticated(true);
+      setShowError(false);
+    } else {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 3000);
+    }
+  };
   const [formData, setFormData] = useState({
     personalInfo: {
       name: '',
@@ -249,7 +264,12 @@ function CareerStatementGenerator() {
       html += '</div>';
     });
     
-    html += '<div class="footer">© 2025 CareerEngineer. All Rights Reserved.</div>';
+    html += '<div class="footer">';
+    html += '<p style="font-weight:bold">© 2025 CareerEngineer. All Rights Reserved.</p>';
+    html += '<p>이 문서는 저작권법에 의해 보호받는 저작물입니다.</p>';
+    html += '<p>문서의 전체 또는 일부를 저작권자의 사전 서면 동의 없이 무단으로 복제, 배포, 전송, 전시, 방송하거나 수정 및 편집하는 행위는 금지되어 있으며,<br/>위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p>';
+    html += '<p>오직 개인적인 용도로만 사용해야 하며, 상업적 목적의 사용 및 무단 배포를 엄격히 금지합니다.</p>';
+    html += '</div>';
     html += '</body></html>';
     
     const blob = new Blob([html], { type: 'application/msword' });
@@ -260,6 +280,47 @@ function CareerStatementGenerator() {
     a.click();
     URL.revokeObjectURL(url);
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-8">
+        <div className="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4">
+              <Lock className="w-8 h-8 text-indigo-600" />
+            </div>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">비공개 페이지</h1>
+            <p className="text-gray-600">CareerEngineer의 경력기술서 작성 가이드&템플릿</p>
+          </div>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">비밀번호를 입력하세요</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all"
+                placeholder="비밀번호 입력"
+                autoFocus
+              />
+            </div>
+            {showError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                비밀번호가 올바르지 않습니다.
+              </div>
+            )}
+            <button
+              onClick={handleLogin}
+              className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold"
+            >
+              접속하기
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-8 px-4">
@@ -701,7 +762,13 @@ function CareerStatementGenerator() {
               <Download className="w-5 h-5" />
               워드 문서로 다운로드
             </button>
-            <p className="text-xs text-gray-500 mt-4">© 2025 CareerEngineer. All Rights Reserved.</p>
+            <div className="mt-6 pt-6 border-t border-gray-200 text-center">
+              <p className="text-xs font-bold text-gray-700 mb-2">© 2025 CareerEngineer. All Rights Reserved.</p>
+              <p className="text-xs text-gray-500 mb-1">이 문서는 저작권법에 의해 보호받는 저작물입니다.</p>
+              <p className="text-xs text-gray-500 mb-1">문서의 전체 또는 일부를 저작권자의 사전 서면 동의 없이 무단으로 복제, 배포, 전송, 전시, 방송하거나</p>
+              <p className="text-xs text-gray-500 mb-1">수정 및 편집하는 행위는 금지되어 있으며, 위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p>
+              <p className="text-xs text-gray-500">오직 개인적인 용도로만 사용해야 하며, 상업적 목적의 사용 및 무단 배포를 엄격히 금지합니다.</p>
+            </div>
           </div>
         </div>
       </div>

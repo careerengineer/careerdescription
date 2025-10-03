@@ -340,8 +340,9 @@ function CareerStatementGenerator() {
               <p className="text-xs text-red-500 mb-1">수정 및 편집하는 행위는 금지되어 있으며, 위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p>
               <p className="text-xs text-gray-500">오직 개인적인 용도로만 사용해야 하며, 상업적 목적의 사용 및 무단 배포를 엄격히 금지합니다.</p>
 </p>
-</p>
             </div>
+
+
 
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
             <p className="text-sm font-semibold text-gray-800 mb-2">작성 핵심 원칙</p>

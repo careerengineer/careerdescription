@@ -775,5 +775,4 @@ function CareerStatementGenerator() {
     </div>
   );
 }
-
 export default CareerStatementGenerator;

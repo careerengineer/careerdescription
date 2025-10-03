@@ -1,4 +1,4 @@
-# CareerStatementGenerator App
+# Career Description Guide App
 
 ## 개요
 - React 기반 경력기술서 작성 도구.

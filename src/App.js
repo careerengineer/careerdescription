@@ -24,7 +24,7 @@ const CareerStatementGenerator = () => {
     languageSkills: [{ languages: '', proficiency: '' }],
     certifications: [{ name: '', issuer: '', date: '' }],
     publications: [{ title: '', journal: '', date: '', author: '' }],
-    projects: [{ company: '', name: '', period: '', role: '', situation: '', task: '', action: '', result: '', insight: '' }]
+    projects: [{ company: '', name: '', period: '', role: '', background: '', goal: '', roleAndAction: '', achievement: '', insightAndEmphasis: '' }]
   });
 
   const handleLogin = () => {
@@ -189,7 +189,7 @@ const CareerStatementGenerator = () => {
   const addProject = () => {
     setFormData({
       ...formData,
-      projects: [...formData.projects, { company: '', name: '', period: '', role: '', situation: '', task: '', action: '', result: '', insight: '' }]
+      projects: [...formData.projects, { company: '', name: '', period: '', role: '', background: '', goal: '', roleAndAction: '', achievement: '', insightAndEmphasis: '' }]
     });
   };
 
@@ -264,20 +264,20 @@ const CareerStatementGenerator = () => {
       });
     }
     
-    html += '<h2>프로젝트 경험 (STAR)</h2>';
+    html += '<h2>프로젝트 경험</h2>';
     formData.projects.forEach((project, index) => {
       html += '<h3>프로젝트 ' + (index + 1) + ': ' + project.name + '</h3>';
       html += '<p><strong>회사:</strong> ' + project.company + '</p>';
       html += '<p><strong>기간:</strong> ' + project.period + '</p>';
       html += '<p><strong>역할:</strong> ' + project.role + '</p>';
-      html += '<p><strong>상황(Situation):</strong><br>' + project.situation.replace(/\n/g, '<br>') + '</p>';
-      html += '<p><strong>과제(Task):</strong><br>' + project.task.replace(/\n/g, '<br>') + '</p>';
-      html += '<p><strong>수행(Action):</strong><br>' + project.action.replace(/\n/g, '<br>') + '</p>';
-      html += '<p><strong>성과(Result):</strong><br>' + project.result.replace(/\n/g, '<br>') + '</p>';
-      html += '<p><strong>인사이트:</strong><br>' + project.insight.replace(/\n/g, '<br>') + '</p>';
+      html += '<p><strong>프로젝트 배경:</strong><br>' + project.background.replace(/\n/g, '<br>') + '</p>';
+      html += '<p><strong>프로젝트 목표:</strong><br>' + project.goal.replace(/\n/g, '<br>') + '</p>';
+      html += '<p><strong>자신의 역할 및 수행 내용:</strong><br>' + project.roleAndAction.replace(/\n/g, '<br>') + '</p>';
+      html += '<p><strong>성과:</strong><br>' + project.achievement.replace(/\n/g, '<br>') + '</p>';
+      html += '<p><strong>인사이트 및 강조하고 싶은 부분:</strong><br>' + project.insightAndEmphasis.replace(/\n/g, '<br>') + '</p>';
     });
     
-    html += '<div style="margin-top:40px;padding:20px;background-color:#fef2f2;border:2px solid #fca5a5;border-radius:8px"><p style="font-size:1rem;color:#374151;margin-bottom:12px;font-weight:bold">📋 저작권 안내</p><p style="font-size:0.875rem;color:#374151;margin-bottom:8px"><strong>이 문서는 저작권법에 의해 보호받는 저작물입니다.</strong> 문서의 전체 또는 일부를 저작권자의 사전 서면 동의 없이 무단으로 <span style="color:#dc2626;font-weight:bold">복제, 배포, 전송, 전시, 방송하거나 수정 및 편집하는 행위는 금지</span>되어 있으며, 위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p><p style="font-size:0.875rem;color:#374151">오직 개인적인 용도로만 사용해야 하며, <span style="color:#dc2626;font-weight:bold">상업적 목적의 사용 및 무단 배포를 엄격히 금지</span>합니다.</p></div>';
+    html += '<div style="margin-top:40px;padding:20px;background-color:#fef2f2;border:2px solid #fca5a5;border-radius:8px"><p style="font-size:1rem;color:#374151;margin-bottom:12px;font-weight:bold">📋 저작권 안내</p><p style="font-size:0.875rem;color:#374151;margin-bottom:8px"><strong>이 문서는 저작권법에 의해 보호받는 저작물입니다.</strong> 문서의 전체 또는 일부를 저작권자의 사전 서면 동의 없이 무단으로 <span style="color:#dc2626;font-weight:bold">복제, 배포, 전송, 전시, 방송하거나 수정 및 편집하는 행위는 금지</span>되어 있으며, 위반 시 관련 법령에 따라 법적인 책임을 질 수 있습니다.</p><p style="font-size:0.875rem;color:#374151">오직 개인적인 용도로만 사용해야 하며, <span style="color:#dc2626;font-weight:bold">상업적 목적의 사용 및 무단 배포를 엄격히 금지</span>합니다.</p><p style="font-size:0.875rem;color:#374151;text-align:center">© 2025 CareerEngineer All Rights Reserved</p></div>';
     html += '</body></html>';
 
     const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
@@ -458,6 +458,13 @@ const CareerStatementGenerator = () => {
               <p className="text-xs mb-1">4. 매칭표를 보며 경력기술서 작성 (키워드를 자연스럽게 녹이기)</p>
               <p className="text-xs">5. 최종 검토: JD와 경력기술서를 나란히 놓고 키워드 매칭 확인</p>
             </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-6">
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+            <p className="text-sm font-semibold text-gray-800 mb-2">📝 안내사항</p>
+            <p className="text-sm text-gray-700">개인 정보가 저장되지 않음. 자신이 아래 구체화해서 작성한 내용은 워드 문서로 다운로드해서 해당 내용을 활용하실 수 있습니다.</p>
           </div>
         </div>
 
@@ -720,15 +727,10 @@ const CareerStatementGenerator = () => {
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">🚀 프로젝트 경험 (STAR 기법)</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">🚀 프로젝트 경험</h2>
           <div className="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-            <p className="text-sm font-semibold text-gray-800 mb-2">STAR 기법이란?</p>
-            <ul className="text-sm text-gray-700 space-y-1">
-              <li>• <strong>S (Situation):</strong> 프로젝트 배경과 상황</li>
-              <li>• <strong>T (Task):</strong> 해결해야 할 과제와 목표</li>
-              <li>• <strong>A (Action):</strong> 자신이 수행한 구체적 행동</li>
-              <li>• <strong>R (Result):</strong> 달성한 성과와 영향</li>
-            </ul>
+            <p className="text-sm font-semibold text-gray-800 mb-2">📝 프로젝트 작성 안내</p>
+            <p className="text-sm text-gray-700">프로젝트를 작성할때는 보안, compilance에 위배되지 않도록 해당분야의 일반적인 용어로 작성합니다.</p>
           </div>
           
           <div className="mb-6">
@@ -781,24 +783,24 @@ const CareerStatementGenerator = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">상황 (Situation)</label>
-                  <textarea value={project.situation} onChange={(e) => updateProject(index, 'situation', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={4} placeholder="예시: 월 거래액 100억원 규모의 전자상거래 플랫폼에서 결제 시스템의 응답시간이 평균 30초로 느려져 결제 이탈률이 8%까지 증가했고, 월 평균 5천만원의 매출 손실이 발생하고 있었습니다." />
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">프로젝트 배경</label>
+                  <textarea value={project.background} onChange={(e) => updateProject(index, 'background', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={4} placeholder="예시: 월 거래액 100억원 규모의 전자상거래 플랫폼에서 결제 시스템의 응답시간이 평균 30초로 느려져 결제 이탈률이 8%까지 증가했고, 월 평균 5천만원의 매출 손실이 발생하고 있었습니다." />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">과제 (Task)</label>
-                  <textarea value={project.task} onChange={(e) => updateProject(index, 'task', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={4} placeholder="예시: 6개월 내 결제 시스템 응답시간을 10초 이하로 단축하고 결제 성공률을 95% 이상으로 개선하여 매출 손실을 최소화하는 것이 목표였습니다." />
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">프로젝트 목표</label>
+                  <textarea value={project.goal} onChange={(e) => updateProject(index, 'goal', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={4} placeholder="예시: 6개월 내 결제 시스템 응답시간을 10초 이하로 단축하고 결제 성공률을 95% 이상으로 개선하여 매출 손실을 최소화하는 것이 목표였습니다." />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">수행 내용 (자신의 역할 명확히)</label>
-                  <textarea value={project.action} onChange={(e) => updateProject(index, 'action', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={6} placeholder="예시:&#10;[개발자]&#10;1. Redis 캐싱 시스템 설계 및 구현&#10;2. DB 쿼리 최적화 10개 수행&#10;3. 모니터링 대시보드 구축&#10;4. 부하 테스트 수행&#10;&#10;[기획자]&#10;1. 사용자 인터뷰 20건 수행 및 니즈 분석&#10;2. 와이어프레임 30개 화면 설계&#10;3. 개발팀과 주 2회 요구사항 조율&#10;4. A/B 테스트 시나리오 3개 설계 및 실행&#10;&#10;[마케터]&#10;1. 페이스북/인스타그램 광고 캠페인 10개 기획&#10;2. 타겟 오디언스 세그먼트 5개 설정&#10;3. 일일 광고 성과 분석 및 최적화&#10;4. 월간 마케팅 리포트 작성 및 발표&#10;&#10;[디자이너]&#10;1. 메인 화면 UI 디자인 15개 페이지&#10;2. 사용자 플로우 5개 시나리오 설계&#10;3. 디자인 컴포넌트 라이브러리 50개 제작&#10;4. 프로토타입 제작 및 사용성 테스트 진행" />
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">자신의 역할 및 수행 내용 (자신의 역할 명확히)</label>
+                  <textarea value={project.roleAndAction} onChange={(e) => updateProject(index, 'roleAndAction', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={6} placeholder="예시:&#10;[개발자]&#10;1. Redis 캐싱 시스템 설계 및 구현&#10;2. DB 쿼리 최적화 10개 수행&#10;3. 모니터링 대시보드 구축&#10;4. 부하 테스트 수행&#10;&#10;[기획자]&#10;1. 사용자 인터뷰 20건 수행 및 니즈 분석&#10;2. 와이어프레임 30개 화면 설계&#10;3. 개발팀과 주 2회 요구사항 조율&#10;4. A/B 테스트 시나리오 3개 설계 및 실행&#10;&#10;[마케터]&#10;1. 페이스북/인스타그램 광고 캠페인 10개 기획&#10;2. 타겟 오디언스 세그먼트 5개 설정&#10;3. 일일 광고 성과 분석 및 최적화&#10;4. 월간 마케팅 리포트 작성 및 발표&#10;&#10;[디자이너]&#10;1. 메인 화면 UI 디자인 15개 페이지&#10;2. 사용자 플로우 5개 시나리오 설계&#10;3. 디자인 컴포넌트 라이브러리 50개 제작&#10;4. 프로토타입 제작 및 사용성 테스트 진행" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">성과 (전체 성과 → 자신의 역할 → 자신의 기여 순서, 개조식)</label>
-                  <textarea value={project.result} onChange={(e) => updateProject(index, 'result', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={8} placeholder="예시:&#10;[개발자]&#10;▪ 프로젝트 전체: 시스템 응답시간 30초→6초(80% 개선), 결제 성공률 92%→98% 향상, 월 매출 손실액 5천만원 제로화&#10;▪ 자신의 역할: 4명 팀 중 백엔드 리드로 Redis 캐싱 시스템 설계 전담&#10;▪ 자신의 기여: 캐시 히트율 85% 달성으로 DB 부하 70% 감소, 전체 응답시간 개선에 핵심 기여&#10;&#10;[기획자]&#10;▪ 프로젝트 전체: 신규 기능 출시로 MAU 50만→80만(60% 증가), 사용자 체류시간 5분→8분 향상&#10;▪ 자신의 역할: 3명 기획팀 중 UX 리서치 및 서비스 설계 담당&#10;▪ 자신의 기여: 사용자 인터뷰 20건 기반 핵심 페인포인트 발굴, 개선된 사용자 플로우 설계로 이탈률 15% 감소&#10;&#10;[마케터]&#10;▪ 프로젝트 전체: 캠페인 진행으로 신규 고객 1만명 유입, 매출 2억원 증대, ROAS 300% 달성&#10;▪ 자신의 역할: 2명 마케팅팀 중 페이스북/인스타그램 광고 담당&#10;▪ 자신의 기여: 타겟 세그먼트 최적화로 CPA 30% 절감(15,000원→10,500원), 전환율 2.5%→3.8% 개선&#10;&#10;[디자이너]&#10;▪ 프로젝트 전체: 리뉴얼 후 사용자 만족도 70점→85점(15점 상승), 앱 평점 3.8→4.5점 향상&#10;▪ 자신의 역할: 4명 디자인팀 중 UI 디자인 리드 담당&#10;▪ 자신의 기여: 디자인 시스템 구축으로 개발 시간 30% 단축, 일관된 UI로 사용성 개선에 핵심 기여" />
+                  <textarea value={project.achievement} onChange={(e) => updateProject(index, 'achievement', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={8} placeholder="예시:&#10;[개발자]&#10;▪ 프로젝트 전체: 시스템 응답시간 30초→6초(80% 개선), 결제 성공률 92%→98% 향상, 월 매출 손실액 5천만원 제로화&#10;▪ 자신의 역할: 4명 팀 중 백엔드 리드로 Redis 캐싱 시스템 설계 전담&#10;▪ 자신의 기여: 캐시 히트율 85% 달성으로 DB 부하 70% 감소, 전체 응답시간 개선에 핵심 기여&#10;&#10;[기획자]&#10;▪ 프로젝트 전체: 신규 기능 출시로 MAU 50만→80만(60% 증가), 사용자 체류시간 5분→8분 향상&#10;▪ 자신의 역할: 3명 기획팀 중 UX 리서치 및 서비스 설계 담당&#10;▪ 자신의 기여: 사용자 인터뷰 20건 기반 핵심 페인포인트 발굴, 개선된 사용자 플로우 설계로 이탈률 15% 감소&#10;&#10;[마케터]&#10;▪ 프로젝트 전체: 캠페인 진행으로 신규 고객 1만명 유입, 매출 2억원 증대, ROAS 300% 달성&#10;▪ 자신의 역할: 2명 마케팅팀 중 페이스북/인스타그램 광고 담당&#10;▪ 자신의 기여: 타겟 세그먼트 최적화로 CPA 30% 절감(15,000원→10,500원), 전환율 2.5%→3.8% 개선&#10;&#10;[디자이너]&#10;▪ 프로젝트 전체: 리뉴얼 후 사용자 만족도 70점→85점(15점 상승), 앱 평점 3.8→4.5점 향상&#10;▪ 자신의 역할: 4명 디자인팀 중 UI 디자인 리드 담당&#10;▪ 자신의 기여: 디자인 시스템 구축으로 개발 시간 30% 단축, 일관된 UI로 사용성 개선에 핵심 기여" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">인사이트/배운점 (선택)</label>
-                  <textarea value={project.insight} onChange={(e) => updateProject(index, 'insight', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={3} placeholder="예시: 이 프로젝트를 통해 대용량 트래픽 환경에서의 캐싱 전략 설계 역량을 확보했으며, 시스템 성능 최적화가 비즈니스 성과에 직접적인 영향을 미친다는 것을 경험했습니다." />
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">인사이트 및 강조하고 싶은 부분 (선택)</label>
+                  <textarea value={project.insightAndEmphasis} onChange={(e) => updateProject(index, 'insightAndEmphasis', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" rows={3} placeholder="예시: 이 프로젝트를 통해 대용량 트래픽 환경에서의 캐싱 전략 설계 역량을 확보했으며, 시스템 성능 최적화가 비즈니스 성과에 직접적인 영향을 미친다는 것을 경험했습니다." />
                 </div>
               </div>
             </div>

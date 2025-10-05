@@ -425,7 +425,7 @@ function CareerStatementGenerator() {
         </div>
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">생년월일</label>
-          <input type="text" value={formData.personalInfo.birth} onChange={(e) => updatePersonalInfo('birth', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 1990.01.01" />
+          <input type="text" value={formData.personalInfo.birth} onChange={(e) => updatePersonalInfo('birth', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 1995.01.01" />
         </div>
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">연락처</label>
@@ -476,7 +476,7 @@ function CareerStatementGenerator() {
             </div>
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">재학 기간</label>
-              <input type="text" value={edu.period} onChange={(e) => updateEducation(index, 'period', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 2020.03 - 2024.02" />
+              <input type="text" value={edu.period} onChange={(e) => updateEducation(index, 'period', e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="예: 2015.03 - 2019.02" />
             </div>
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">졸업 상태</label>
@@ -685,8 +685,8 @@ function CareerStatementGenerator() {
         <div className="space-y-3 text-sm text-gray-700">
           <div className="flex items-start gap-2">
             <span className="text-blue-600">•</span>
-            <p><strong>보안 준수:</strong> 프로젝트 작성 시 보안유지가 필요한 회사명, 민감 정보에 대해서는 해당 분야의 일반적인 용어로 작성하세요.<br/>
-            예: "전자상거래 플랫폼", "금융 서비스 기업", "글로벌 IT 기업" 등</p>
+            <p><strong>보안 준수:</strong> 프로젝트 작성 시 보안유지가 필요한 제품명, 민감 정보에 대해서는 해당 분야의 일반적인 용어로 작성하세요.<br/>
+            예: "전자상거래 플랫폼", "금융 서비스" 등</p>
           </div>
           <div className="flex items-start gap-2">
             <span className="text-blue-600">•</span>

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/careergoal_workbook/static/css/main.fc75674b.css",
-    "main.js": "/careergoal_workbook/static/js/main.dc816349.js",
-    "static/js/453.bf28fca4.chunk.js": "/careergoal_workbook/static/js/453.bf28fca4.chunk.js",
-    "index.html": "/careergoal_workbook/index.html",
-    "main.fc75674b.css.map": "/careergoal_workbook/static/css/main.fc75674b.css.map",
-    "main.dc816349.js.map": "/careergoal_workbook/static/js/main.dc816349.js.map",
-    "453.bf28fca4.chunk.js.map": "/careergoal_workbook/static/js/453.bf28fca4.chunk.js.map"
+    "main.css": "/careerdescription/static/css/main.fc75674b.css",
+    "main.js": "/careerdescription/static/js/main.bb552413.js",
+    "static/js/453.0d2aed6d.chunk.js": "/careerdescription/static/js/453.0d2aed6d.chunk.js",
+    "index.html": "/careerdescription/index.html",
+    "main.fc75674b.css.map": "/careerdescription/static/css/main.fc75674b.css.map",
+    "main.bb552413.js.map": "/careerdescription/static/js/main.bb552413.js.map",
+    "453.0d2aed6d.chunk.js.map": "/careerdescription/static/js/453.0d2aed6d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc75674b.css",
-    "static/js/main.dc816349.js"
+    "static/js/main.bb552413.js"
   ]
 }
